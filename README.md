@@ -25,5 +25,12 @@
   - prototype_id
 
 - likes
-  user_id
-  prototype_id
+  - user_id
+  - prototype_id
+
+- tags
+  - name
+
+- prototypes_tags
+  - prototype_id
+  - tag_id
