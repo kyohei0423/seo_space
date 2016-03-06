@@ -507,6 +507,10 @@ body {
     font-size: 24px;
   }
 
+  .user-profile {
+    height: 292px;
+  }
+
   .user-image {
     border: 2px solid #ddd;
     border-radius: 50%;
@@ -593,4 +597,13 @@ body {
       box-shadow: 0 1px 1px #eee;
     }
   }
+}
+
+.footer {
+  text-align: center;
+  margin-top: 30px
+}
+
+.text-center {
+  text-align: center;
 }
