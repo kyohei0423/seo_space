@@ -1,0 +1,24 @@
+.container.user-new
+  .col-md-8.col-md-offset-2
+    %header.row.user-nav
+      .col-md-12
+        %h2 Sign up
+        = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+          = devise_error_messages!
+          .field.user-name.col-md-10
+            = f.text_field :nickname, autofocus: true, placeholder: "Nickname"
+          .field.user-image.col-md-2
+            %button.btn.btn-primary Add Image
+            = f.file_field :avatar
+          .field
+            = f.email_field :email, autofocus: true, class: "user-email col-md-10", placeholder: "Email"
+          .field
+            = f.password_field :password, autocomplete: "off", class: "user-password col-md-10", placeholder: "Password"
+          .field
+            = f.password_field :password_confirmation, autocomplete: "off", class: "user-password col-md-10", placeholder: "Password Confirmation"
+          .field
+            = f.text_field :work, autofocus: true, class: "user-name col-md-10", placeholder: "Work"
+          .field
+            = f.text_area :profile, autofocus: true, class: "user-name col-md-12 user-profile", placeholder: "Profile"
+          .actions.row.user-btn
+            = f.submit "Sign up", class: "btn btn-lg btn-primary btn-block"
