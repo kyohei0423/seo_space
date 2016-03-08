@@ -11,7 +11,7 @@
         %ul.nav.navbar-nav.navbar-right
           %li.dropdown
             %a.dropdown-toggle{aria: { expanded: "false" }, data: { toggle: "dropdown" }, href: "#", role: "button"}
-              = current_user.nickname.present? ? current_user.nickname : "UserName"
+              = current_user.nickname? ? current_user.nickname : "UserName"
               %span.caret
             %ul.dropdown-menu{role: "menu"}
               %li
