@@ -1,0 +1,34 @@
+= form_for @prototype, html: { class: "container proto-new" } do |f|
+  .col-md-8.col-md-8.col-md-offset-2
+    %header.row.user-nav
+      .field.col-me-12
+        = f.text_field :title, autofocus: true, class: "proto-new-title", placeholder: "title"
+    .row
+      .col-me-12
+        -# .cover-image-upload
+        -#   = f.file_field
+      -# .col-me-12
+      -#   %ul.proto-sub-list.list-group
+      -#     - 2.times do |i|
+      -#       %li.list-group-item.col-md-4.appear_form
+      -#         .image-upload
+      -#           = f.file_field
+      -#     %li.list-group-item.col-md-4.appear_form
+      -#       .image-upload-plus
+      -#         %span +
+      .row.photo-description
+        .col-md-12
+          = f.text_field :catch_copy, placeholder: "Catch Copy"
+        .col-md-12
+          = f.text_area :concept, placeholder: "Concept", class: "concept-text-area"
+        -# .col-md-12
+        -#   %h4 Tag List
+        -#   .row
+        -#     .col-md-3
+        -#       = f.text_field, placeholder: "Web Design"
+        -#     .col-md-3
+        -#       = f.text_field, placeholder: "UI"
+        -#     .col-md-3
+        -#       = f.text_field, placeholder: "Application"
+      .actions
+        = f.submit "Publish", class: "btn btn-lg btn-primary btn"
