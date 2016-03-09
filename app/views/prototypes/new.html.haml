@@ -20,7 +20,7 @@
         .col-md-12
           = f.text_field :catch_copy, placeholder: "Catch Copy"
         .col-md-12
-          = f.text_area :concept, placeholder: "Concept", class: "concept-text-area"
+          = f.text_area :concept, placeholder: "Concept", class: "user-profile"
         -# .col-md-12
         -#   %h4 Tag List
         -#   .row
@@ -30,5 +30,5 @@
         -#       = f.text_field, placeholder: "UI"
         -#     .col-md-3
         -#       = f.text_field, placeholder: "Application"
-      .actions
-        = f.submit "Publish", class: "btn btn-lg btn-primary btn"
+      .actions.proto-btn.text-center
+        = f.submit "Publish", class: "btn btn-lg btn-primary btn-block"
