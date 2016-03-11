@@ -1,8 +1,8 @@
 = form_for @prototype, html: { class: "container proto-new" } do |f|
-  .col-md-8.col-md-8.col-md-offset-2
+  .col-md-8.col-md-8.col-md-offset-2.prototype-form
     %header.row.user-nav
       .field.col-me-12
-        = f.text_field :title, autofocus: true, class: "proto-new-title", placeholder: "title"
+        = f.text_field :title, autofocus: true, class: "proto-new-title", placeholder: "Title"
     .row
       .col-me-12
         .cover-image-upload
@@ -19,7 +19,7 @@
         .col-md-12
           = f.text_field :catch_copy, placeholder: "Catch Copy"
         .col-md-12
-          = f.text_area :concept, placeholder: "Concept", class: "user-profile"
+          = f.text_area :concept, placeholder: "Concept", class: "concept-text-area"
         -# .col-md-12
         -#   %h4 Tag List
         -#   .row
