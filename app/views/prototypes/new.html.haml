@@ -5,17 +5,16 @@
         = f.text_field :title, autofocus: true, class: "proto-new-title", placeholder: "title"
     .row
       .col-me-12
-        -# .cover-image-upload
-        -#   = f.file_field
-      -# .col-me-12
-      -#   %ul.proto-sub-list.list-group
-      -#     - 2.times do |i|
-      -#       %li.list-group-item.col-md-4.appear_form
-      -#         .image-upload
-      -#           = f.file_field
-      -#     %li.list-group-item.col-md-4.appear_form
-      -#       .image-upload-plus
-      -#         %span +
+        .cover-image-upload
+          = f.fields_for :images do |images_form|
+            = images_form.file_field :image
+      .col-me-12
+        %ul.proto-sub-list.list-group
+          - 3.times do |i|
+            %li.list-group-item.col-md-4.appear_form
+              .image-upload
+                = f.fields_for :images do |images_form|
+                  = images_form.file_field :image
       .row.photo-description
         .col-md-12
           = f.text_field :catch_copy, placeholder: "Catch Copy"
