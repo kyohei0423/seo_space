@@ -8,7 +8,12 @@ class PrototypesController < ApplicationController
   end
 
   def create
-    redirect_to root_url if current_user.prototypes.create(prototype_params)
+    @prototype =  current_user.prototypes.new(prototype_params)
+    if @prototype.save
+      redirect_to root_url
+    else
+      render :new
+    end
   end
 
   private
