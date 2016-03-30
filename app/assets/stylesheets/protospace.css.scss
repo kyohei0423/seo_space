@@ -613,3 +613,18 @@ footer {
     height: 172px;
   }
 }
+
+.social-button-syncer {
+  margin-top: 0;
+  margin-bottom: 10px;
+  .sc-tw {
+    border-left: 1px solid #d8d8d8;
+    padding-left: 14px;
+  }
+}
+
+.likes-box {
+  width: 268px;
+  float: right;
+  margin: 0 -1px 15px 0;
+}
