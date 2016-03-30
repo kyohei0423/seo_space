@@ -1,5 +1,6 @@
 class PrototypesController < ApplicationController
   def index
+    @prototypes = Prototype.order("created_at DESC")
   end
 
   def new
@@ -17,7 +18,6 @@ class PrototypesController < ApplicationController
   end
 
   private
-
   def prototype_params
     params.require(:prototype).permit(:title, :catch_copy, :concept, images_attributes: [:id, :image, :status]).merge(tag_list: params.require(:prototype).require(:tags).values)
   end

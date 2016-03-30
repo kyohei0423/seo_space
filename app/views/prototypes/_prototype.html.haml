@@ -1,0 +1,11 @@
+.col-sm-4.col-md-3.proto-content
+  .thumbnail
+    = link_to image_tag(prototype.images.first.image), prototype_path(prototype)
+    .caption
+      %h3
+        = prototype.title
+      .proto-meta
+        .proto-user
+          = link_to "by #{prototype.user.nickname}", "#"
+        .proto-posted
+          = prototype.created_at.strftime("%b %d")
