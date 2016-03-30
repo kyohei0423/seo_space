@@ -1,6 +1,11 @@
 class PrototypesController < ApplicationController
+  before_action :set_prototype, only: [:show, :edit, :update]
   def index
     @prototypes = Prototype.order("created_at DESC")
+  end
+
+  def show
+    @sub_images = @prototype.images.sub
   end
 
   def new
@@ -20,5 +25,9 @@ class PrototypesController < ApplicationController
   private
   def prototype_params
     params.require(:prototype).permit(:title, :catch_copy, :concept, images_attributes: [:id, :image, :status]).merge(tag_list: params.require(:prototype).require(:tags).values)
+  end
+
+  def set_prototype
+    @prototype = Prototype.find(params[:id])
   end
 end
