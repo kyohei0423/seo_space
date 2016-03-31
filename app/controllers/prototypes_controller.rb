@@ -10,7 +10,7 @@ class PrototypesController < ApplicationController
 
   def new
     @prototype = Prototype.new
-    @prototype.images.build
+    @images = @prototype.images.build
   end
 
   def create
@@ -28,6 +28,6 @@ class PrototypesController < ApplicationController
   end
 
   def set_prototype
-    @prototype = Prototype.find(params[:id])
+    @prototype = Prototype.includes(:images).find(params[:id])
   end
 end
