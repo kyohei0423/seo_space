@@ -22,6 +22,18 @@ class PrototypesController < ApplicationController
     end
   end
 
+  def edit
+    @images = @prototype.images
+  end
+
+  def update
+    if @prototype.update(prototype_params)
+      redirect_to root_url
+    else
+      render :edit
+    end
+  end
+
   private
   def prototype_params
     params.require(:prototype).permit(:title, :catch_copy, :concept, images_attributes: [:id, :image, :status]).merge(tag_list: params.require(:prototype).require(:tags).values)
