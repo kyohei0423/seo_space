@@ -3,7 +3,7 @@
     .col-md-6
       .media
         .media-left
-          = link_to image_tag(@prototype.user.avatar, height: 64, class: "media-object"), "#"
+          = link_to image_tag(@prototype.user.avatar, class: "media-object"), "#"
         .media-body
           %h4.media-heading
             = @prototype.title
@@ -22,7 +22,7 @@
       = image_tag @prototype.images.first.image, class: "img-responsive"
     .col-md-3
       %ul.proto-sub-list.list-group
-        = render partial: "sub_image", collection: @sub_images
+        = render partial: "sub_image", collection: @prototype.images.sub
   .row.proto-description
     .col-md-3
       %h4
