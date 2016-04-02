@@ -1,4 +1,5 @@
 class PrototypesController < ApplicationController
+  
   before_action :set_prototype, only: [:show, :edit, :update]
   def index
     @prototypes = Prototype.includes(:user).order(created_at: :DESC)
