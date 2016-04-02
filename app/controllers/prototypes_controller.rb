@@ -1,11 +1,10 @@
 class PrototypesController < ApplicationController
   before_action :set_prototype, only: [:show, :edit, :update]
   def index
-    @prototypes = Prototype.order("created_at DESC")
+    @prototypes = Prototype.includes(:user).order(created_at: :DESC)
   end
 
   def show
-    @sub_images = @prototype.images.sub
   end
 
   def new
@@ -28,6 +27,6 @@ class PrototypesController < ApplicationController
   end
 
   def set_prototype
-    @prototype = Prototype.find(params[:id])
+    @prototype = Prototype.includes(:user).find(params[:id])
   end
 end
