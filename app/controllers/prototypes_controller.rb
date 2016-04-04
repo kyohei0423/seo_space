@@ -16,7 +16,7 @@ class PrototypesController < ApplicationController
   def create
     @prototype =  current_user.prototypes.new(prototype_params)
     if @prototype.save
-      redirect_to root_url
+      redirect_to root_path
     else
       render :new
     end
@@ -28,7 +28,7 @@ class PrototypesController < ApplicationController
 
   def update
     if @prototype.update(prototype_params)
-      redirect_to root_url
+      redirect_to root_path
     else
       render :edit
     end
@@ -36,7 +36,7 @@ class PrototypesController < ApplicationController
 
   def destroy
     @prototype.destroy
-    redirect_to root_url
+    redirect_to root_path
   end
 
   private
