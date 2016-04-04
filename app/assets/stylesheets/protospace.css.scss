@@ -327,6 +327,7 @@ body {
 
     .media-object {
       border-radius: 50%;
+      height: 63px;
     }
 
     button {
@@ -612,4 +613,14 @@ footer {
   .concept-text-area {
     height: 172px;
   }
+}
+
+.likes-box {
+  width: 268px;
+  float: right;
+  margin: 0 -1px 15px 0;
+}
+
+.index-prototype-image {
+  height: 73px;
 }

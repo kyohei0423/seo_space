@@ -1,0 +1,15 @@
+.jumbotron
+  .container.text-center
+    = image_tag "header_logo.png", class: "index-prototype-image"
+.filter-nav
+  .container
+    .row
+      %ul.nav.nav-pills.col-lg-11
+        %li{ role: :presentation }
+          = link_to "Popular PROTO", "#"
+        %li{ role: :presentation }
+          = link_to "Newest PROTO", "#"
+      = link_to "View Tags", "#", class: "btn btn-default col-lg-1"
+.container.proto-list
+  .row
+    = render @prototypes
