@@ -23,7 +23,6 @@ class PrototypesController < ApplicationController
   end
 
   def edit
-    @images = @prototype.images
   end
 
   def update
@@ -45,6 +44,6 @@ class PrototypesController < ApplicationController
   end
 
   def set_prototype
-    @prototype = Prototype.includes(:images, :user).find(params[:id])
+    @prototype = Prototype.find(params[:id])
   end
 end
