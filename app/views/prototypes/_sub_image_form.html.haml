@@ -1,0 +1,5 @@
+%li.list-group-item.col-md-4.appear_form
+  .image-upload
+    = f.fields_for :images, sub_image_form do |sub_images_form|
+      = sub_images_form.file_field :image
+      = sub_images_form.hidden_field :status, value: :sub
