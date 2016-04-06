@@ -1,6 +1,6 @@
 class PrototypesController < ApplicationController
-  before_action :set_prototype, only: [:show, :edit, :update]
-  
+  before_action :set_prototype, only: [:show, :edit, :update, :destroy]
+
   def index
     @prototypes = Prototype.includes(:user).order(created_at: :DESC)
   end
@@ -16,10 +16,26 @@ class PrototypesController < ApplicationController
   def create
     @prototype =  current_user.prototypes.new(prototype_params)
     if @prototype.save
-      redirect_to root_url
+      redirect_to root_path
     else
       render :new
     end
+  end
+
+  def edit
+  end
+
+  def update
+    if @prototype.update(prototype_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @prototype.destroy
+    redirect_to root_path
   end
 
   private
@@ -28,6 +44,6 @@ class PrototypesController < ApplicationController
   end
 
   def set_prototype
-    @prototype = Prototype.includes(:user).find(params[:id])
+    @prototype = Prototype.find(params[:id])
   end
 end
