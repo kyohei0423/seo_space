@@ -34,3 +34,6 @@
         Concept
       %p
         = @prototype.concept
+
+  .row.proto-comments
+    = render partial: "comment", locals: { prototype: @prototype, comment: @comment }
