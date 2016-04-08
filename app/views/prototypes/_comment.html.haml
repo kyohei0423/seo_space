@@ -1,0 +1,8 @@
+.media
+  .media-left
+    = link_to image_tag(comment.user.avatar), user_path(comment.user), class: "media-object"
+  .media-body
+    %h4.media-heading
+      = comment.user.nickname
+    %p
+      = comment.text

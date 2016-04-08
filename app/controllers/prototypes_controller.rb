@@ -6,7 +6,8 @@ class PrototypesController < ApplicationController
   end
 
   def show
-    @comment = @prototype.comments.build
+    @comments = @prototype.comments
+    @comment = Comment.new
   end
 
   def new

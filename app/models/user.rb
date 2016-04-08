@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   # Association
   has_many :prototypes
+  has_many :comments
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   mount_uploader :avatar, AvatarUploader
