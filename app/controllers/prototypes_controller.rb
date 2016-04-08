@@ -46,6 +46,6 @@ class PrototypesController < ApplicationController
   end
 
   def set_prototype
-    @prototype = Prototype.find(params[:id])
+    @prototype = Prototype.includes(comments: [:user]).find(params[:id])
   end
 end
