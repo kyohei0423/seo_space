@@ -1,0 +1,19 @@
+- if user_signed_in?
+  - if prototype.likes.find_by(user_id: current_user)
+    = button_to prototype_likes_path(prototype), class: "button btn btn-default increment-button", id: "like-button", remote: true do
+      = image_tag("icon_heart_red.svg")
+      LIKE
+      %span.num#like-sum
+        = likes.count
+  - else
+    = button_to prototype_likes_path(prototype), class: "button btn btn-default increment-button", id: "like-button", remote: true do
+      = image_tag("icon_heart.svg")
+      LIKE
+      %span.num#like-sum
+        = likes.count
+- else
+  = button_to user_session_path, class: "button btn btn-default increment-button", id: "like-button" do
+    = image_tag("icon_heart.svg")
+    LIKE
+    %span.num#like-sum
+      = likes.count
