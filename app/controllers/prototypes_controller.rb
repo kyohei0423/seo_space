@@ -8,7 +8,10 @@ class PrototypesController < ApplicationController
   def show
     @comments = @prototype.comments
     @comment = Comment.new
-    @like = @prototype.likes.build
+
+    if user_signed_in?
+      @like = @prototype.likes.find_by(user_id: current_user.id)
+    end
   end
 
   def new
@@ -22,6 +25,10 @@ class PrototypesController < ApplicationController
       redirect_to root_path
     else
       render :new
+    end
+
+    if user_signed_in?
+      @like = @prototype.likes.find_by(user_id: current_user.id)
     end
   end
 

@@ -1,1 +1,1 @@
-$("#like-button").html("<%= j(render partial: "likes/like", locals: { prototype: @prototype, likes: @prototype.likes, like: @like }) %>")
+$(".likes-box").html("<%= j(render partial: "like", locals: { prototype: @prototype, like: @like }) %>")
