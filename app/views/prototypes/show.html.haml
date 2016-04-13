@@ -31,5 +31,5 @@
         Concept
       %p
         = @prototype.concept
-  .row.proto-comments
+  .row.proto-comments#comment_area
     = render partial: "comments", locals: { prototype: @prototype, comments: @prototype.comments, new_comment: @comment }

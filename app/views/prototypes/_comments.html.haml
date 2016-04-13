@@ -3,9 +3,9 @@
   %span.num
     (#{comments.count})
 - if prototype.comments.present?
-  .col-md-8#comment_area
+  .col-md-8
     .comment_list
-      = render partial: "comment", collection: comments
+      = render partial: "prototypes/comment", collection: comments
 .col-md-8
   - if user_signed_in?
     = form_for [prototype, new_comment], html: { class: "form-inline" }, remote: true do |f|
