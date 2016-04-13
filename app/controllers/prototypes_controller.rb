@@ -6,7 +6,6 @@ class PrototypesController < ApplicationController
   end
 
   def show
-    @comments = @prototype.comments
     @comment = Comment.new
 
     if user_signed_in?

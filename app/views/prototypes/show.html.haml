@@ -32,4 +32,4 @@
       %p
         = @prototype.concept
   .row.proto-comments
-    = render partial: "comments", locals: { prototype: @prototype, comments: @comments, new_comment: @comment }
+    = render partial: "comments", locals: { prototype: @prototype, comments: @prototype.comments, new_comment: @comment }

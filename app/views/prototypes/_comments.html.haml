@@ -2,7 +2,7 @@
   Comments
   %span.num
     (#{comments.count})
-- if @prototype.comments.present?
+- if prototype.comments.present?
   .col-md-8#comment_area
     .comment_list
       = render partial: "comment", collection: comments
