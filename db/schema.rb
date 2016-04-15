@@ -14,11 +14,9 @@
 ActiveRecord::Schema.define(version: 20160413122510) do
 
   create_table "comments", force: :cascade do |t|
-    t.string   "text",         limit: 255
-    t.integer  "user_id",      limit: 4
-    t.integer  "prototype_id", limit: 4
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string  "text",         limit: 255
+    t.integer "user_id",      limit: 4
+    t.integer "prototype_id", limit: 4
   end
 
   create_table "images", force: :cascade do |t|
@@ -30,10 +28,8 @@ ActiveRecord::Schema.define(version: 20160413122510) do
   end
 
   create_table "likes", force: :cascade do |t|
-    t.integer  "prototype_id", limit: 4
-    t.integer  "user_id",      limit: 4
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer "prototype_id", limit: 4
+    t.integer "user_id",      limit: 4
   end
 
   create_table "prototypes", force: :cascade do |t|

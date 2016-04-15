@@ -3,7 +3,6 @@ class CreateLikes < ActiveRecord::Migration
     create_table :likes do |t|
       t.integer :prototype_id
       t.integer :user_id
-      t.timestamps
     end
   end
 end
