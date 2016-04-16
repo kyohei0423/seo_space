@@ -13,10 +13,7 @@
               = @prototype.user.profile
     .col-md-6.clearfix
       .likes-box
-        %button.btn.btn-default.increment-button
-          = image_tag "icon_heart.svg"
-          LIKE
-          %span.num
+        = render partial: "likes/like", locals: { prototype: @prototype, like: @prototype.user_like(current_user) }
   .row
     .col-md-9
       = image_tag @prototype.images.first.image, class: "img-responsive"
@@ -34,3 +31,5 @@
         Concept
       %p
         = @prototype.concept
+  .row.proto-comments#comment_area
+    = render partial: "comments", locals: { prototype: @prototype, comments: @prototype.comments, new_comment: @comment }

@@ -1,0 +1,2 @@
+$("#comment_text").val("");
+$("#comment_area").html("<%= j(render partial: "prototypes/comments", locals: { prototype: @prototype, comments: @prototype.comments, new_comment: @comment }) %>")
