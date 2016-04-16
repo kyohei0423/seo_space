@@ -9,4 +9,8 @@ class Prototype < ActiveRecord::Base
   acts_as_taggable
 
   validates :title, :catch_copy, :concept, presence: true
+
+  def user_like(user)
+    likes.find_by(user_id: user.id)
+  end
 end
