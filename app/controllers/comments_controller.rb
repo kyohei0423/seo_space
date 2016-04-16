@@ -1,12 +1,12 @@
 class CommentsController < ApplicationController
   def create
-    @prototype = Prototype.find(params[:prototype_id])
-    @prototype.comments.create(comments_params)
+    comment = Comment.create(comments_params)
+    @prototype = comment.prototype
     @comment = Comment.new
   end
 
   private
   def comments_params
-    params.require(:comment).permit(:text).merge(user_id: current_user.id)
+    params.require(:comment).permit(:text).merge(user_id: current_user.id, prototype_id: params[:prototype_id])
   end
 end
