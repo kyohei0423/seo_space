@@ -9,7 +9,7 @@
           = link_to "Popular PROTO", "#"
         %li{ role: :presentation }
           = link_to "Newest PROTO", "#"
-      = link_to "View Tags", "#", class: "btn btn-default col-lg-1"
+      = link_to "View Tags", tags_path, class: "btn btn-default col-lg-1"
 .container.proto-list
   .row
     = render @prototypes
