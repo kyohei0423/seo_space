@@ -31,5 +31,10 @@
         Concept
       %p
         = @prototype.concept
+    .col-md-3
+      %h4
+        Tag List
+      %ul.proto-tag-list.list-inline
+        = render partial: "tag", collection: @prototype.tag_list
   .row.proto-comments#comment_area
     = render partial: "comments", locals: { prototype: @prototype, comments: @prototype.comments, new_comment: @comment }

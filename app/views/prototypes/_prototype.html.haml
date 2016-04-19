@@ -19,3 +19,5 @@
           = link_to "by #{prototype.user.nickname}", "#"
         .proto-posted
           = prototype.created_at.strftime("%b %d")
+      %ul.proto-tag-list.list-inline
+        = render partial: "tags/tag", collection: prototype.tags
