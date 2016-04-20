@@ -20,12 +20,16 @@
           - if prototype.images.sub.present?
             = render partial: "sub_image_form", collection: prototype.images.sub, locals: { f: f }
           - else
-            - 3.times do
+            - 2.times do
               %li.list-group-item.col-md-4.appear_form
                 .image-upload
                   = f.fields_for :images do |sub_images_form|
                     = sub_images_form.file_field :image
                     = sub_images_form.hidden_field :status, value: :sub
+            %li.list-group-item.col-md-4#add_new_form
+              .image-upload-plus
+                %span
+                  +
 
       .row.photo-description
         .col-md-12
