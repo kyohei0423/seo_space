@@ -5,10 +5,10 @@
         = f.text_field :title, autofocus: true, class: "proto-new-title", placeholder: "Title"
     .row
       .col-me-12
-        .cover-image-upload
+        .cover-image-upload.preview-uploaded-image.image-upload
           - if prototype.images.main.present?
             = f.fields_for :images, prototype.images.main do |main_image_form|
-              = main_image_form.file_field :image
+              = main_image_form.file_field :image, class: ".preview-uploaded-image"
               = main_image_form.hidden_field :status, value: :main
           - else
             = f.fields_for :images do |main_image_form|
@@ -25,27 +25,27 @@
                 %span
                   +
             %li.list-group-item.col-md-4.appear_form.default-hidden
-              .image-upload
+              .image-upload.preview-uploaded-image
                 = f.fields_for :images do |sub_images_form|
-                  = sub_images_form.file_field :image
+                  = sub_images_form.file_field :image, class: ".file-input preview-uploaded-image"
                   = sub_images_form.hidden_field :status, value: :sub
             %li.list-group-item.col-md-4#add_new_form.default-hidden.add-image-form
               .image-upload-plus
                 %span
                   +
             %li.list-group-item.col-md-4.appear_form.default-hidden
-              .image-upload
+              .image-upload.preview-uploaded-image
                 = f.fields_for :images do |sub_images_form|
-                  = sub_images_form.file_field :image
+                  = sub_images_form.file_field :image, class: ".file-input preview-uploaded-image"
                   = sub_images_form.hidden_field :status, value: :sub
             %li.list-group-item.col-md-4#add_new_form.default-hidden.add-image-form
               .image-upload-plus
                 %span
                   +
             %li.list-group-item.col-md-4.appear_form.default-hidden
-              .image-upload
+              .image-upload.preview-uploaded-image
                 = f.fields_for :images do |sub_images_form|
-                  = sub_images_form.file_field :image
+                  = sub_images_form.file_field :image, class: ".file-input preview-uploaded-image"
                   = sub_images_form.hidden_field :status, value: :sub
 
       .row.photo-description
