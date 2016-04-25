@@ -7,7 +7,7 @@
           %h2 Edit Profile
           .field.row.user-name.col-md-10
             = f.text_field :nickname, autofocus: true, placeholder: "New Nickname"
-          .field.user-image.col-md-2
+          .field.user-image.col-md-2.image-upload
             %button.btn.btn-primary Change Image
             = f.file_field :avatar
           .field.row.user-email.col-md-12
