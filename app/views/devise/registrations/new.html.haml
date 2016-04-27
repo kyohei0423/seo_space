@@ -7,7 +7,7 @@
           = devise_error_messages!
           .field.user-name.col-md-10
             = f.text_field :nickname, autofocus: true, placeholder: "Nickname"
-          .field.user-image.col-md-2
+          .field.user-image.col-md-2.image-upload
             %button.btn.btn-primary Add Image
             = f.file_field :avatar
           .field
