@@ -1,6 +1,6 @@
 class NewestController < ApplicationController
   def index
-    @prototypes = Prototype.order(created_at: :desc).includes(:user, :tags).page(params[:page]).per(10)
+    @prototypes = Prototype.includes(:user).order(created_at: :DESC).includes(:tags).page(params[:page])
     render template: "prototypes/index"
   end
 end
