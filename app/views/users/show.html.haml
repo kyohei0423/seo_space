@@ -25,7 +25,7 @@
               = @user.work
 
 .container.proto-list
-  = render partial: "prototypes/prototype", collection: @prototypes
+  = render @prototypes
 
 .text-center
   = paginate @prototypes
