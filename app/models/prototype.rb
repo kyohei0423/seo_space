@@ -8,6 +8,8 @@ class Prototype < ActiveRecord::Base
 
   acts_as_taggable
 
+  paginates_per 10
+
   validates :title, :catch_copy, :concept, presence: true
 
   def user_like(user)
